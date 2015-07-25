@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="teacherapp" xmlns:ng="www.angularjs.org">
+<head>
+    <title>Smart School</title>
+    <link rel="shortcut icon" href="http://localhost:9752/School/images/favicon.ico" />
+    <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
+
+    <script type='text/javascript' src='http://localhost:9752/School/script/jquery-1.11.1.js'></script>
+
+    <script src="../script/angular.min.js" type="text/javascript"></script>
+
+    <script src="../script/angular-resource.min.js" type="text/javascript"></script>
+
+    <script src="../script/TeacherController.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div class="top">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font class="para">Principal DashBoard</font>
+    </div>
+    <div class="left">
+        <a id="1" class="hyplnk" href="#/Attendance">
+            <br />
+            &nbsp Attendance</a>
+        <br />
+        <a id="2" class="hyplnk" href="#/Marks">
+            <br />
+            &nbsp Marks</a>
+        <br />
+        <a id="A1" class="hyplnk" href="#/Assignment">
+            <br />
+            &nbsp Assignment</a>
+        <br />
+        <a id="A2" class="hyplnk" href="#/Time Table">
+            <br />
+            &nbsp Time Table</a>
+        <br />
+        <a id="A3" class="hyplnk" href="#/Email">
+            <br />
+            &nbsp Email</a>
+        <br />
+        <a id="A4" class="hyplnk" href="#/Feedback">
+            <br />
+            &nbsp Feedback</a>
+        <br />
+        <a id="A5" class="hyplnk" href="#/Schedule Exam">
+            <br />
+            &nbsp Schedule Exam</a>
+        <br />
+        <a class="hyplnk" href="#/Notice Board">
+            <br />
+            &nbsp Notice Board</a>
+        <br />
+        <a class="hyplnk" href="#/About Us">
+            <br />
+            &nbsp About Us</a>
+        <br />
+        <a class="hyplnk" href="#/Contact Us">
+            <br />
+            &nbsp Contact Us</a>
+    </div>
+    <div id="dmid" class="mid">
+        <div ng-view="">
+        </div>
+    </div>
+    <div class="right">
+        <p id="demo">
+        </p>
+    </div>
+</body>
+</html>

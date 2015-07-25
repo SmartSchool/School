@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+   
+    <style type="text/css">
+        .style1
+        {
+            width: 187px;
+        }
+    </style>
+   
+</head>
+<body>
+    <div>
+        <br />
+        <h1 class="para" align="left">
+            Manage Roles</h1>
+            
+    </div>
+            
+        <table style="top: 138px; left: 7px; position: absolute; height: 329px; width: 809px">
+            <tbody>
+                <tr ng-repeat="x in roles">
+                    <td align="center">
+                        <font>{{x.name}}</font>
+                    </td>
+                    <td align="center">
+                        <input type="button" onclick="location.href='#/{{x.actiontype[0]}}';" value="Add Record" />
+                    </td>
+                    <td align="center" class="style1">
+                        <input type="button" onclick="location.href='#/{{x.actiontype[1]}}';" value="Update Record" />
+                    </td>
+                    <td align="center">
+                        <input type="button" onclick="location.href='#/{{x.actiontype[2]}}';" value="Delete Record" />
+                    </td>
+                    <td align="center">
+                        <input type="button" onclick="location.href='#/{{x.actiontype[3]}}';" value="Show Record" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

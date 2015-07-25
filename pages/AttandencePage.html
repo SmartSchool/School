@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Attandence Page</title>
+    <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+   <div class="atdtop">
+&nbsp;&nbsp;&nbsp;&nbsp; 
+       <br />
+       <font><strong style="font-size: large">&nbsp;&nbsp; Class</strong></font>&nbsp;&nbsp;&nbsp;
+        <select name="D1" style="top: 20px; position: absolute; height: 21px; width: 87px">
+            <option value="volvo">class1</option>
+            <option value="saab">class2</option>
+            <option value="mercedes">class3</option>
+            <option value="audi">class4</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font><strong style="font-size: large">Subject</strong></font>&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="sub" style="top: 21px; left: 259px; position: absolute; height: 20px;
+            width: 54px">
+            <option value="volvo">Hindi</option>
+            <option value="saab">Maths</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font><strong style="font-size: large">&nbsp; Date</strong></font>
+        <input type="date" style="top: 17px; left: 414px; position: absolute; height: 22px;
+            width: 124px" />
+       
+   </div>
+   <div class="atdmid">
+        <table >
+        <tbody>
+            <tr>
+                <th>
+                    Students Name
+                </th>
+                <th>
+                    Attendance
+                </th>
+            </tr>
+            <tr ng-repeat="r in studentdata">
+                <td>
+                    <label for="checkbox_id">
+                        {{ r.name }}</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="checkbox_id" checked="true" />
+                </td>
+            </tr>
+        </tbody>
+        </table>
+   </div>
+        
+        <div class="atdbottom">
+            <input type='submit' id='btn_atten'
+                value="Submit">
+        </div>
+      
+</body>
+</html>

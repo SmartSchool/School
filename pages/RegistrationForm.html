@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Registration</title>
+    <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <br />
+    <div>
+        <ul id="tabs">
+            <li ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">
+                <a class="hyplnk">{{tab.title}}</a></li>
+        </ul>
+    </div>
+    <div id="mainView">
+        <br />
+        <div ng-include="currentTab">
+        </div>
+    </div>
+</body>
+</html>
