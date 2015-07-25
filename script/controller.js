@@ -22,7 +22,8 @@
             })
             .when('/Notice Board',
             {
-                    
+                    templateUrl: 'NoticeBoard.html'
+                   
             })
             .when('/About Us',
             {

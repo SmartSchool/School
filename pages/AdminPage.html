@@ -3,7 +3,10 @@
 <head>
     <title>Smart School</title>
     <link rel="shortcut icon" href="http://localhost:9752/School/images/favicon.ico" />
+    
     <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
+    
+    <link href="../style/style.css" rel="stylesheet" type="text/css" />
 
     <script type='text/javascript' src='http://localhost:9752/School/script/jquery-1.11.1.js'></script>
 
@@ -15,40 +18,36 @@
 
 </head>
 <body ng-app="ngapp">
-   
-        <div class="top">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="top">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font class="para">Admin DashBoard</font>
+    </div>
+    <div class="left">
+        <a id="1" class="hyplnk" href="#/Home">
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <font class="para">Admin DashBoard</font>
-           
-        </div>
-        <div class="left">
-            <a id="1" class="hyplnk" href="#/Home">
-                <br />
-                &nbsp Home</a>
+            &nbsp Home</a>
+        <br />
+        <a id="2" class="hyplnk" href="#/Manage Users">
             <br />
-            <a id="2" class="hyplnk" href="#/Manage Users">
-                <br />
-                &nbsp Manage Users</a>
+            &nbsp Manage Users</a>
+        <br />
+        <a class="hyplnk" href="#/Notice Board">
             <br />
-            <a class="hyplnk" href="#/Notice Board">
-                <br />
-                &nbsp Notice Board</a>
+            &nbsp Notice Board</a>
+        <br />
+        <a class="hyplnk" href="#/About Us">
             <br />
-            <a class="hyplnk" href="#/About Us">
-                <br />
-                &nbsp About Us</a>
+            &nbsp About Us</a>
+        <br />
+        <a class="hyplnk" href="#/Contact Us">
             <br />
-            <a class="hyplnk" href="#/Contact Us">
-                <br />
-                &nbsp Contact Us</a>
-        </div>
-        <div id="dmid" class="mid" ng-view="">
-           
-        </div>
-        <div class="right">
-        </div>
-
+            &nbsp Contact Us</a>
+    </div>
+    <div id="dmid" class="mid" ng-view="">
+    </div>
+    <div class="right">
+    </div>
 </body>
 </html>
