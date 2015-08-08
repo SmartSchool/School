@@ -645,7 +645,7 @@ width: 7.4em;
 
 
 table {
-    width:857px;
+    width:753px;
     height:48px;
     border-bottom-color:Yellow;
     padding: 5px;
@@ -658,13 +658,14 @@ table {
     	box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
     	
   
-    left: 22px;
+    left: 31px;
     position: absolute;
     border-left-color: Yellow;
     border-right-color: Yellow;
     border-top-color: Yellow;
-	top: 129px;
-	}
+	top: 111px;
+	margin-top: 3px;
+}
 
 th , td {
     border: 1px solid grey;

@@ -4,23 +4,23 @@
     <title>Registration Form</title>
     <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body ng-app="ngapp">
     <br />
     <h1 class="para" align="left">
         Sign up</h1>
     <div style="height: 356px">
-        
-        <input type="text" class="useridinp" placeholder="Email address" style="top: 122px;
-            left: 156px; position: absolute; height: 22px; width: 282px" />
-        
-        <input class="passinp" type="text" placeholder="Password" style="top: 170px; left: 156px;
-            position: absolute; height: 22px; width: 282px; bottom: 301px;" />
-       
+        <input type="text" class="useridinp" ng-model="signup.email" placeholder="Email address"
+            style="top: 122px; left: 156px; position: absolute; height: 22px; width: 282px" />
+        <input type="password" class="passinp" type="text" ng-model="signup.password" placeholder="Password"
+            style="top: 170px; left: 156px; position: absolute; height: 22px; width: 282px;
+            bottom: 301px;" />
         <p style="top: 221px; left: 156px; position: absolute; height: 38px; width: 1048px">
             <b>By clicking Join Now, you agree to Smart School <a href=" ">User Agreement</a>,
                 <br />
-                <a href=" ">Privacy Policy</a> and <a href=" ">Cookie Policy</a></b></p>
-        <input class="postbtn" type="submit" value="Join now">
+                <a href=" ">Privacy Policy</a> and <a href=" ">Cookie Policy</a></b>
+        </p>
+        <input class="postbtn" type="submit" ng-click="senddata()" value="Join now">
+        
     </div>
 </body>
 </html>

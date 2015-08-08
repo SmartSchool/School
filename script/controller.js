@@ -8,7 +8,8 @@
         $routeProvider
             .when('/Sign Up',
             {
-                   templateUrl: 'Signup.html'
+                   templateUrl: 'Signup.html',
+                   controller: 'TabsCtrl'
             })
             .when('/Home',
             {
@@ -53,18 +54,9 @@
             })  
             .otherwise({redirectTo: '/AdminPage.html'});
             });
-           
-           app.controller("schCtrl",function ($scope, $window){
-          
-           
+            
 
-     
-       });
-       
-
-app.controller("TabsCtrl",function ($scope){
-
-
+app.controller("TabsCtrl",function ($scope, $http){
 
        
        $scope.roles = [ {
@@ -132,36 +124,30 @@ app.controller("TabsCtrl",function ($scope){
        }
        ];
        
-      
-       $scope.convertJson = function() {
-    $scope.json = angular.toJson($scope.school); 
-    
-}
-$scope.showJson = function() {
-    $scope.data = angular.fromJson($scope.json);
-    
-}
-      $scope.tabs = [{
-            title: 'Add School',
-            url: 'SchoolInfo.html'
-        }, {
-            title: 'Add Student',
-            url: 'StudentInfo.html'
-        }, {
-            title: 'Add Teacher',
-            url: 'TeacherInfo.html'
-        }, {
-            title: 'Add Parent',
-            url: 'ParentsInfo.html'    
-    }];
-    $scope.currentTab = 'SchoolInfo.html';
+$scope.senddata = function() {
+     
+    $scope.json = angular.toJson($scope.signup);
+ 
+    $http({
+        url: "https://api.mongolab.com/api/1/databases/schools/collections/signup?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
+        method: "POST",
+        data: $scope.json,
+        headers: {'Content-Type': 'application/json'}
+      }).success(function (data, status, headers, config) {
+            
+             
+        }).error(function (data, status, headers, config) {
+            $scope.status = status + ' ' + headers;
+        });
 
-    $scope.onClickTab = function (tab) {
-        $scope.currentTab = tab.url;
-    }
     
-    $scope.isActiveTab = function(tabUrl) {
-        return tabUrl == $scope.currentTab;
-    }
-    //});
+}
+
+$scope.getdata = function() {
+
+    $http.get("https://api.mongolab.com/api/1/databases/schools/collections/signup?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu")
+    .success(function(response) {$scope.dataa = response;});
+    
+}
+
 });
