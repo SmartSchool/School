@@ -146,7 +146,10 @@ $scope.senddata = function() {
 $scope.getdata = function() {
 
     $http.get("https://api.mongolab.com/api/1/databases/schools/collections/signup?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu")
-    .success(function(response) {$scope.dataa = response;});
+    .success(function(response) {$scope.dataa = response;
+    window.alert($scope.dataa.length);
+    });
+    
     
 }
 
