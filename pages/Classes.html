@@ -22,7 +22,7 @@
         <h1 class="para" align="left">
             Class Information</h1>
         &nbsp;&nbsp;&nbsp; Class Standard&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="txt_class_std" ng-model="fgf" />&nbsp;
+        <input type="text" id="txt_class_std" ng-model="Class.std" />&nbsp;
         <br />
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp; Add Sections
@@ -64,6 +64,18 @@
                 <tr>
                     <td>
                         <input type="submit" ng-click="addRow()" value="Add" />
+                    </td>
+                    <td>
+                        <span>
+                        {{class_coll[0].std}}
+                        </span>
+                    </td>
+                    <td>
+                        <select ng-model="std" ng-change="">
+                            <option value="">Select Class</option>
+                            <option ng-repeat="cls in class_coll" value="{{cls.std}}" ng-selected="{{cls.std == std}}">
+                                {{cls.std}} </option>
+                        </select>
                     </td>
                 </tr>
             </tbody>
@@ -108,6 +120,11 @@
                 </tr>
             </tbody>
         </table>
+        <input type="submit" ng-click="sendclass()" value="Submit" 
+         style="top: 421px; left: 16px; position: absolute; height: 26px; width: 61px" />
+        <input type="submit" ng-click="getclass()" value="Get" 
+            style="top: 422px; left: 133px; position: absolute; height: 26px; width: 35px; right: 900px"  />
+      
     </div>
 </body>
 </html>
