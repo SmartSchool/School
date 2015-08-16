@@ -37,7 +37,7 @@
             .when('/scharec',
             {
                     templateUrl: 'SchoolInfo.html',
-                    controller: 'TabsCtrl'
+                    controller: 'schoolCtrl'
                        
             })
             .when('/stuarec',
@@ -202,6 +202,8 @@ $scope.sendteacher = function() {
         });  
 }
 
+
+
 $scope.generate_teacher_id = function() {
     $scope.schoolid ="LNCT"; 
   
@@ -209,6 +211,8 @@ $scope.generate_teacher_id = function() {
     $scope.teacher.rollno = String($scope.schoolid) + ($scope.teacher_coll.length + 1);
     
 }
+
+
 
 $scope.sections = [ ];
 
@@ -276,6 +280,74 @@ $scope.getdata = function() {
     });
 
     
+}
+
+});
+
+
+app.controller("schoolCtrl",function ($scope, $http){
+
+$scope.getstate = function() {
+    
+    $http.get("https://api.mongolab.com/api/1/databases/schools/collections/states?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu")
+    .success(function(response) {$scope.states_coll = response;
+     
+      
+    });
+    
+}
+
+$scope.states = [];
+$scope.cities = [];
+
+$scope.addcity = function(){
+
+$scope.cities.push({'cityname':$scope.city});
+$scope.city = '';
+
+}
+
+$scope.addstate = function(){
+
+$scope.states.push({'statename':$scope.statename, 'cities':$scope.cities});
+$scope.statename = '';
+$scope.cities = [];
+
+}
+
+$scope.sendstate = function(){
+
+
+   
+    $scope.json = angular.toJson($scope.states);
+ 
+    $http({
+        url: "https://api.mongolab.com/api/1/databases/schools/collections/states?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
+        method: "POST",
+        data: $scope.json,
+        headers: {'Content-Type': 'application/json'}
+      }).success(function (data, status, headers, config) {
+          window.alert("Successfully Inserted");
+          $scope.states = [];  
+             
+        }).error(function (data, status, headers, config) {
+            $scope.status = status + ' ' + headers;
+        });  
+      
+}
+
+$scope.myfun = function(){
+
+angular.forEach($scope.states_coll, function(value, key) {
+    /* do something for all key: value pairs */
+    
+    if (value.statename === $scope.statename)
+    {
+       $scope.cities = value.cities;
+    }
+   
+});
+
 }
 
 });

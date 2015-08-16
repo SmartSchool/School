@@ -5,6 +5,7 @@
     <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <form ng-load="getstate()" action="">
     <div>
         <br />
         <h1 class="para" align="left">
@@ -41,16 +42,37 @@
                 </tr>
                 <tr>
                     <td>
+                        Country
+                    </td>
+                    <td>
+                    </td>
+                    <td>
                         State
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_state" />
+                        <select ng-model="statename" ng-change="myfun()" ng-init="getstate()">
+                            <option value="">Select State</option>
+                            <option ng-repeat="sts in states_coll | orderBy:'statename'" value="{{sts.statename}}"
+                                ng-selected="{{sts.statename == state}}">{{sts.statename}} </option>
+                        </select>
                     </td>
+                </tr>
+                <tr>
                     <td>
                         City
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_city" />
+                        <select ng-model="city" ng-change="">
+                            <option value="">Select City</option>
+                            <option ng-repeat="ct in cities | orderBy:'cityname'" value="{{ct.cityname}}"
+                                ng-selected="{{ct.cityname == city}}">{{ct.cityname}} </option>
+                        </select>
+                    </td>
+                    <td>
+                        No of Teachers
+                    </td>
+                    <td>
+                        <input type="text" id="Text1" />
                     </td>
                 </tr>
                 <tr>
@@ -61,7 +83,7 @@
                         <input type="text" id="txt_sch_principle" />
                     </td>
                     <td>
-                        No of Teachers
+                        Board Name
                     </td>
                     <td>
                         <input type="text" id="txt_sch_total_teachers" />
@@ -81,8 +103,44 @@
                         <input type="text" id="txt_sch_no_ofclasses" />
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        Type of Medium
+                    </td>
+                    <td>
+                        <input type="text" id="Text2" />
+                    </td>
+                    <td>
+                        Up to Which class
+                    </td>
+                    <td>
+                        <input type="text" id="Text4" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Temp for state
+                    </td>
+                    <td>
+                        <input type="text" ng-model="statename" />
+                    </td>
+                    <td>
+                        Temp for city
+                    </td>
+                    <td>
+                        <input type="text" ng-model="city" />
+                    </td>
+                    <td>
+                        <input type="submit" value="Addcity" ng-click="addcity()" />
+                    </td>
+                     <td>
+                        <input type="submit" value="Addstate" ng-click="addstate()" />
+                    </td>
+                </tr>
             </tbody>
         </table>
+        <input type="submit" ng-click="sendstate()" />
     </div>
+    </form>
 </body>
 </html>
