@@ -58,6 +58,13 @@
                     controller: 'TabsCtrl'
                        
             }) 
+            
+             .when('/prinarec',
+            {
+                    templateUrl: 'PrincipalPage.html',
+                    controller: 'TabsCtrl'
+                       
+            })
             .otherwise({redirectTo: '/AdminPage.html'});
             });
             
@@ -349,5 +356,40 @@ angular.forEach($scope.states_coll, function(value, key) {
 });
 
 }
+
+$scope.send_school_data = function() {
+    
+     $scope.json = angular.toJson($scope.schooll);
+ 
+    $http({
+        url: "https://api.mongolab.com/api/1/databases/schools/collections/SchoolRecord?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
+        method: "POST",
+        data: $scope.json,
+        headers: {'Content-Type': 'application/json'}
+      }).success(function (data, status, headers, config) {
+          window.alert("Successfully Inserted");
+                 
+        }).error(function (data, status, headers, config) {
+            $scope.status = status + ' ' + headers;
+        });  
+}
+
+$scope.sendprinciple = function() {
+    
+     $scope.json = angular.toJson($scope.principle);
+ 
+    $http({
+        url: "https://api.mongolab.com/api/1/databases/schools/collections/principle?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
+        method: "POST",
+        data: $scope.json,
+        headers: {'Content-Type': 'application/json'}
+      }).success(function (data, status, headers, config) {
+          window.alert("Successfully Inserted");
+                 
+        }).error(function (data, status, headers, config) {
+            $scope.status = status + ' ' + headers;
+        });  
+}
+
 
 });

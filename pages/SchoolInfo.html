@@ -72,7 +72,7 @@
                         No of Teachers
                     </td>
                     <td>
-                        <input type="text" id="Text1" />
+                        <input type="text" id="Text1" ng-model="schooll.noofteacher" />
                     </td>
                 </tr>
                 <tr>
@@ -80,13 +80,13 @@
                         Principle Name
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_principle" />
+                        <input type="text" id="txt_sch_principle" ng-model="schooll.principlename" />
                     </td>
                     <td>
                         Board Name
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_total_teachers" />
+                        <input type="text" id="txt_sch_total_teachers" ng-model="schooll.boardname" />
                     </td>
                 </tr>
                 <tr>
@@ -94,13 +94,13 @@
                         No of Busses
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_total_busses" />
+                        <input type="text" id="txt_sch_total_busses" ng-model="schooll.noofbusses"/>
                     </td>
                     <td>
                         No of Classes
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_no_ofclasses" />
+                        <input type="text" id="txt_sch_no_ofclasses" ng-model="schooll.noofclasses"/>
                     </td>
                 </tr>
                 <tr>
@@ -108,7 +108,7 @@
                         Type of Medium
                     </td>
                     <td>
-                        <input type="text" id="Text2" />
+                        <input type="text" id="Text2" ng-model="schooll.medium"/>
                     </td>
                     <td>
                         Up to Which class
@@ -140,6 +140,7 @@
             </tbody>
         </table>
         <input type="submit" ng-click="sendstate()" />
+        <input type="submit" ng-click="send_school_data()" />
     </div>
     </form>
 </body>
