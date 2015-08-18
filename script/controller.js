@@ -43,7 +43,7 @@
             .when('/stuarec',
             {
                     templateUrl: 'StudentInfo.html',
-                    controller: 'TabsCtrl'
+                    controller: 'schoolCtrl'
                        
             })
             .when('/techarec',
@@ -61,7 +61,13 @@
             
              .when('/prinarec',
             {
-                    templateUrl: 'PrincipalPage.html',
+                    templateUrl: 'PrincipalInfo.html',
+                    controller: 'TabsCtrl'
+                       
+            })
+              .when('/driarec',
+            {
+                    templateUrl: 'Driver.html',
                     controller: 'TabsCtrl'
                        
             })
@@ -148,6 +154,40 @@ $scope.senddata = function() {
         headers: {'Content-Type': 'application/json'}
       }).success(function (data, status, headers, config) {
             
+             
+        }).error(function (data, status, headers, config) {
+            $scope.status = status + ' ' + headers;
+        });    
+}
+
+$scope.senddriverdata = function() {
+     
+    $scope.json = angular.toJson($scope.driverdata);
+ 
+    $http({
+        url: "https://api.mongolab.com/api/1/databases/schools/collections/drivers?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
+        method: "POST",
+        data: $scope.json,
+        headers: {'Content-Type': 'application/json'}
+      }).success(function (data, status, headers, config) {
+            window.alert("Successfully submitted record");
+             
+        }).error(function (data, status, headers, config) {
+            $scope.status = status + ' ' + headers;
+        });    
+}
+
+$scope.sendstudentdata = function() {
+     
+    $scope.json = angular.toJson($scope.studentdata);
+ 
+    $http({
+        url: "https://api.mongolab.com/api/1/databases/schools/collections/students?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
+        method: "POST",
+        data: $scope.json,
+        headers: {'Content-Type': 'application/json'}
+      }).success(function (data, status, headers, config) {
+            window.alert("Successfully submitted record");
              
         }).error(function (data, status, headers, config) {
             $scope.status = status + ' ' + headers;
@@ -358,7 +398,7 @@ angular.forEach($scope.states_coll, function(value, key) {
 }
 
 $scope.send_school_data = function() {
-    
+    window.alert("hello");
      $scope.json = angular.toJson($scope.schooll);
  
     $http({

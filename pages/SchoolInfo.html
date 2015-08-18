@@ -17,13 +17,13 @@
                         School Name
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_name" />
+                        <input type="text" id="txt_sch_name" ng-model="schooll.schoolname"/>
                     </td>
                     <td>
                         Registration no.
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_reg_no" />
+                        <input type="text" id="txt_sch_reg_no" ng-model="schooll.regno"/>
                     </td>
                 </tr>
                 <tr>
@@ -31,13 +31,13 @@
                         Address
                     </td>
                     <td>
-                        <textarea rows="4" cols="50" id="txt_sch_add"></textarea>
+                        <textarea rows="4" cols="50" id="txt_sch_add" ng-model="schooll.address"></textarea>
                     </td>
                     <td>
                         Contact
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_contact" />
+                        <input type="text" id="txt_sch_contact" ng-model="schooll.contactdetails"/>
                     </td>
                 </tr>
                 <tr>
@@ -45,6 +45,11 @@
                         Country
                     </td>
                     <td>
+                    <select name="country">
+<option value="">Country...</option>
+<option value="">India</option>
+
+</select>
                     </td>
                     <td>
                         State
@@ -108,7 +113,11 @@
                         Type of Medium
                     </td>
                     <td>
-                        <input type="text" id="Text2" ng-model="schooll.medium"/>
+                       
+                        <select ng-model="schooll.medium>
+                            <option value="">Select Type</option>
+                            <option value="">Hindi</option>
+                            <option value="">English</option>
                     </td>
                     <td>
                         Up to Which class
@@ -140,7 +149,7 @@
             </tbody>
         </table>
         <input type="submit" ng-click="sendstate()" />
-        <input type="submit" ng-click="send_school_data()" />
+        <input type="submit" value="final submit" ng-click="send_school_data()" />
     </div>
     </form>
 </body>
