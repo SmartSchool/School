@@ -8,6 +8,7 @@
     <div class="container-fluid">
         <h1 align="left">
             Class Information</h1>
+        <br />
         <table class="table table-striped">
             <tbody>
                 <tr>
@@ -18,102 +19,107 @@
                         <input class="form-control" type="text" ng-model="Class.std" />
                     </td>
                 </tr>
-                <tr>
-                    <td>
+        </table>
+        <input type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-primary"
+            value="Add Sections" />
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="container-fluid">
+                    <div class="modal-header">
                         <h1 align="left">
                             Add Sections
                         </h1>
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Group Name
-                    </td>
-                    <td>
-                        <input class="form-control" type="text" id="txt_tea_gender" ng-model="groupname" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        ClassRoom No
-                    </td>
-                    <td>
-                        <input class="form-control" type="text" id="txt_tea_email" ng-model="roomno" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        No Of Seats
-                    </td>
-                    <td>
-                        <input class="form-control" type="text" id="txt_tea_dob" ng-model="noofseats" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        No Of Students
-                    </td>
-                    <td>
-                        <input class="form-control" type="text" id="txt_tea_contact" ng-model="noofstudents" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" class="btn btn-primary" ng-click="addRow()" value="Add" />
-                    </td>
-                    <td>
-                        <select class="form-control" ng-model="std" ng-change="">
-                            <option value="">Select Class</option>
-                            <option ng-repeat="cls in class_coll | orderBy:'std'" value="{{cls.std}}" ng-selected="{{cls.std == std}}">
-                                {{cls.std}} </option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="container-fluid">
-        <table class="table table-striped">
-            <tbody>
-                <tr>
-                    <th>
-                        Group Name
-                    </th>
-                    <th>
-                        Room No
-                    </th>
-                    <th>
-                        No of Seats
-                    </th>
-                    <th>
-                        No of Students
-                    </th>
-                    <th>
-                        Remove
-                    </th>
-                </tr>
-                <tr ng-repeat="section in sections">
-                    <td>
-                        {{section.groupname}}
-                    </td>
-                    <td>
-                        {{section.roomno}}
-                    </td>
-                    <td>
-                        {{section.noofseats}}
-                    </td>
-                    <td>
-                        {{section.noofstudents}}
-                    </td>
-                    <td>
-                        <input type="button" class="btn btn-primary" value="Remove" ng-click="removeRow(section.groupname)" />
-                    </td>
-                </tr>
-            </tbody> 
-        </table>
-        <input type="submit" class="btn btn-primary" value="Submit" ng-click="sendclass()" />
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Group Name
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" id="txt_tea_gender" ng-model="groupname" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        ClassRoom No
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" id="txt_tea_email" ng-model="roomno" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        No Of Seats
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" id="txt_tea_dob" ng-model="noofseats" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        No Of Students
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" id="txt_tea_contact" ng-model="noofstudents" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit" class="btn btn-primary" ng-click="addRow()" value="Add" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        Group Name
+                                    </th>
+                                    <th>
+                                        Room No
+                                    </th>
+                                    <th>
+                                        No of Seats
+                                    </th>
+                                    <th>
+                                        No of Students
+                                    </th>
+                                    <th>
+                                        Remove
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="section in sections">
+                                    <td>
+                                        {{section.groupname}}
+                                    </td>
+                                    <td>
+                                        {{section.roomno}}
+                                    </td>
+                                    <td>
+                                        {{section.noofseats}}
+                                    </td>
+                                    <td>
+                                        {{section.noofstudents}}
+                                    </td>
+                                    <td>
+                                        <input type="button" class="btn btn-primary" value="Remove" ng-click="removeRow(section.groupname)" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" value="Submit" ng-click="sendclass()" />
+                        <input type="submit" class="btn btn-primary" data-dismiss="modal" value="Close" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
