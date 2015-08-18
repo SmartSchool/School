@@ -2,16 +2,15 @@
 <html>
 <head>
     <title>Smart School | Style Demo</title>
-    <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
+    <link href="../style/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body ng-app="ngapp">
-    <div>
-        <br />
-        <h1 class="para" align="left">
+    <div class="container-fluid">
+
+        <h1 align="left">
             Teacher Information</h1>
-        <table>
+        <table class="table table-striped">
             <tbody>
-            
                 <tr>
                     <td>
                         First Name
@@ -82,14 +81,9 @@
                         <textarea rows="4" cols="50" id="txt_tea_add" ng-model="teacher.prmaddress"></textarea>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <input type="submit" ng-click="getAndSendteacher()" value="submit"/>
-                    </td>
-                    
-                </tr>
             </tbody>
         </table>
+        <input type="submit" class="btn btn-primary" value="Submit" ng-click="getAndSendteacher()" />
     </div>
 </body>
 </html>

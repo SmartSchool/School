@@ -3,13 +3,13 @@
 <meta charset="ISO-8859-1">
 <head>
     <title>Smart School</title>
-    <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
+    <link href="../style/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div id="main">
-        <h1 class="para">
+    <div class="container-fluid">
+        <h1 align="left">
             Principle Information</h1>
-        <table>
+        <table class="table table-striped">
             <tbody>
                 <tr>
                     <td>
@@ -30,7 +30,7 @@
                         Last Name
                     </td>
                     <td>
-                        <input type="text" id="txt_fname"ng-model="principle.lastname"></input>
+                        <input type="text" id="txt_fname" ng-model="principle.lastname"></input>
                     </td>
                     <td>
                         Gender
@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>
-                       ResidencePhone
+                        ResidencePhone
                     </td>
                     <td>
                         <input type="text" ng-model="principle.resiphone"></input>
@@ -75,13 +75,9 @@
                         <input type="text" id="txt_total_paddress"></input>
                     </td>
                 </tr>
-                <tr>
-                <td>
-                <input type="submit" value="Save" ng-click="sendprinciple()"/>
-                </td>
-                </tr>
             </tbody>
         </table>
+        <input type="submit" class="btn btn-primary" value="Submit" ng-click="sendprinciple()" />
     </div>
 </body>
 </html>

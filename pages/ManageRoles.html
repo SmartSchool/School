@@ -2,32 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Untitled Page</title>
-   
-    <style type="text/css">
-        .style1
-        {
-            width: 187px;
-        }
-
-    </style>
-       <link href="../style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../style/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div>
-        <br />
-        <h1 class="para" align="left">
+    <div class="container-fluid">
+        <h1 align="left">
             Manage Roles</h1>
-            
-    </div>
-            
-        <table class="table" style="top: 138px; left: 7px; position: absolute; height: 329px; width: 809px">
+        <br />
+        <table class="table table-striped">
             <tbody>
                 <tr ng-repeat="x in roles">
                     <td align="center">
                         <font>{{x.name}}</font>
                     </td>
                     <td align="center">
-                        <input type="button" class="btn btn-primary" onclick="location.href='#/{{x.actiontype[0]}}';" value="Add Record" />
+                        <input type="button" class="btn btn-primary" 
+                            onclick="location.href='#/{{x.actiontype[0]}}';" value="Add Record" />
                     </td>
                     <td align="center" class="style1">
                         <input type="button" class="btn btn-primary" onclick="location.href='#/{{x.actiontype[1]}}';"
@@ -44,5 +34,6 @@
                 </tr>
             </tbody>
         </table>
-    </body>
+    </div>
+</body>
 </html>
