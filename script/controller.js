@@ -397,7 +397,7 @@ $scope.myfun = function(){
 angular.forEach($scope.states_coll, function(value, key) {
     /* do something for all key: value pairs */
     
-    if (value.statename === $scope.statename)
+    if (value.statename === $scope.schooldb.statename)
     {
        $scope.cities = value.cities;
     }
@@ -408,7 +408,7 @@ angular.forEach($scope.states_coll, function(value, key) {
 
 $scope.send_school_data = function() {
     window.alert("hello");
-     $scope.json = angular.toJson($scope.schooll);
+     $scope.json = angular.toJson($scope.schooldb);
  
     $http({
         url: "https://api.mongolab.com/api/1/databases/schools/collections/SchoolRecord?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",

@@ -17,13 +17,13 @@
                         School Name
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_name" ng-model="schooll.schoolname"/>
+                        <input type="text" id="txt_sch_name" ng-model="schooldb.schoolname"/>
                     </td>
                     <td>
                         Registration no.
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_reg_no" ng-model="schooll.regno"/>
+                        <input type="text" id="txt_sch_reg_no" ng-model="schooldb.regno"/>
                     </td>
                 </tr>
                 <tr>
@@ -31,13 +31,13 @@
                         Address
                     </td>
                     <td>
-                        <textarea rows="4" cols="50" id="txt_sch_add" ng-model="schooll.address"></textarea>
+                        <textarea rows="4" cols="50" id="txt_sch_add" ng-model="schooldb.address"></textarea>
                     </td>
                     <td>
                         Contact
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_contact" ng-model="schooll.contactdetails"/>
+                        <input type="text" id="txt_sch_contact" ng-model="schooldb.contactdetails"/>
                     </td>
                 </tr>
                 <tr>
@@ -55,10 +55,10 @@
                         State
                     </td>
                     <td>
-                        <select ng-model="statename" ng-change="myfun()" ng-init="getstate()">
+                        <select ng-model="schooldb.statename" ng-change="myfun()" ng-init="getstate()">
                             <option value="">Select State</option>
                             <option ng-repeat="sts in states_coll | orderBy:'statename'" value="{{sts.statename}}"
-                                ng-selected="{{sts.statename == state}}">{{sts.statename}} </option>
+                                ng-selected="{{sts.statename == schooldb.statename}}">{{sts.statename}} </option>
                         </select>
                     </td>
                 </tr>
@@ -67,17 +67,17 @@
                         City
                     </td>
                     <td>
-                        <select ng-model="city" ng-change="">
+                        <select ng-model="schooldb.city" ng-change="">
                             <option value="">Select City</option>
                             <option ng-repeat="ct in cities | orderBy:'cityname'" value="{{ct.cityname}}"
-                                ng-selected="{{ct.cityname == city}}">{{ct.cityname}} </option>
+                                ng-selected="{{ct.cityname == schooldb.city}}">{{ct.cityname}} </option>
                         </select>
                     </td>
                     <td>
                         No of Teachers
                     </td>
                     <td>
-                        <input type="text" id="Text1" ng-model="schooll.noofteacher" />
+                        <input type="text" id="Text1" ng-model="schooldb.noofteacher" />
                     </td>
                 </tr>
                 <tr>
@@ -85,13 +85,13 @@
                         Principle Name
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_principle" ng-model="schooll.principlename" />
+                        <input type="text" id="txt_sch_principle" ng-model="schooldb.principlename" />
                     </td>
                     <td>
                         Board Name
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_total_teachers" ng-model="schooll.boardname" />
+                        <input type="text" id="txt_sch_total_teachers" ng-model="schooldb.boardname" />
                     </td>
                 </tr>
                 <tr>
@@ -99,13 +99,13 @@
                         No of Busses
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_total_busses" ng-model="schooll.noofbusses"/>
+                        <input type="text" id="txt_sch_total_busses" ng-model="schooldb.noofbusses"/>
                     </td>
                     <td>
                         No of Classes
                     </td>
                     <td>
-                        <input type="text" id="txt_sch_no_ofclasses" ng-model="schooll.noofclasses"/>
+                        <input type="text" id="txt_sch_no_ofclasses" ng-model="schooldb.noofclasses"/>
                     </td>
                 </tr>
                 <tr>
@@ -114,7 +114,7 @@
                     </td>
                     <td>
                        
-                        <select ng-model="schooll.medium>
+                        <select ng-model="schooldb.medium>
                             <option value="">Select Type</option>
                             <option value="">Hindi</option>
                             <option value="">English</option>
