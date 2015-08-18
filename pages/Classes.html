@@ -66,23 +66,18 @@
                         <input type="submit" ng-click="addRow()" value="Add" />
                     </td>
                     <td>
-                        <span>
-                        {{class_coll[0].std}}
-                        </span>
-                    </td>
-                    <td>
                         <select ng-model="std" ng-change="">
                             <option value="">Select Class</option>
-                            <option ng-repeat="cls in class_coll" value="{{cls.std}}" ng-selected="{{cls.std == std}}">
+                            <option ng-repeat="cls in class_coll | orderBy:'std'" value="{{cls.std}}" ng-selected="{{cls.std == std}}">
                                 {{cls.std}} </option>
                         </select>
                     </td>
                 </tr>
             </tbody>
-        </table> 
+        </table>
     </div>
     <div>
-     <table class="tbl">
+        <table class="tbl">
             <tbody>
                 <tr>
                     <th>
@@ -98,7 +93,7 @@
                         No of Students
                     </th>
                     <th>
-                       Remove
+                        Remove
                     </th>
                 </tr>
                 <tr ng-repeat="section in sections">
@@ -120,11 +115,10 @@
                 </tr>
             </tbody>
         </table>
-        <input type="submit" ng-click="sendclass()" value="Submit" 
-         style="top: 421px; left: 16px; position: absolute; height: 26px; width: 61px" />
-        <input type="submit" ng-click="getclass()" value="Get" 
-            style="top: 422px; left: 133px; position: absolute; height: 26px; width: 35px; right: 900px"  />
-      
+        <input type="submit" ng-click="sendclass()" value="Submit" style="top: 421px; left: 16px;
+            position: absolute; height: 26px; width: 61px" />
+        <input type="submit" ng-click="getclass()" value="Get" style="top: 422px; left: 133px;
+            position: absolute; height: 26px; width: 35px; right: 900px" />
     </div>
 </body>
 </html>

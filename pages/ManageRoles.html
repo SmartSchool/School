@@ -8,8 +8,9 @@
         {
             width: 187px;
         }
+
     </style>
-   
+       <link href="../style/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div>
@@ -19,23 +20,26 @@
             
     </div>
             
-        <table style="top: 138px; left: 7px; position: absolute; height: 329px; width: 809px">
+        <table class="table" style="top: 138px; left: 7px; position: absolute; height: 329px; width: 809px">
             <tbody>
                 <tr ng-repeat="x in roles">
                     <td align="center">
                         <font>{{x.name}}</font>
                     </td>
                     <td align="center">
-                        <input type="button" onclick="location.href='#/{{x.actiontype[0]}}';" value="Add Record" />
+                        <input type="button" class="btn btn-primary" onclick="location.href='#/{{x.actiontype[0]}}';" value="Add Record" />
                     </td>
                     <td align="center" class="style1">
-                        <input type="button" onclick="location.href='#/{{x.actiontype[1]}}';" value="Update Record" />
+                        <input type="button" class="btn btn-primary" onclick="location.href='#/{{x.actiontype[1]}}';"
+                            value="Update Record" />
                     </td>
                     <td align="center">
-                        <input type="button" onclick="location.href='#/{{x.actiontype[2]}}';" value="Delete Record" />
+                        <input type="button" class="btn btn-primary" onclick="location.href='#/{{x.actiontype[2]}}';"
+                            value="Delete Record" />
                     </td>
                     <td align="center">
-                        <input type="button" onclick="location.href='#/{{x.actiontype[3]}}';" value="Show Record" />
+                        <input type="button" class="btn btn-primary" onclick="location.href='#/{{x.actiontype[3]}}';"
+                            value="Show Record" />
                     </td>
                 </tr>
             </tbody>

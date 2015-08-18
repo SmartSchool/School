@@ -286,6 +286,16 @@ $scope.removeRow = function(groupname){
 		$scope.sections.splice( index, 1 );		
 	}
 
+$scope.removeAllRow = function(){				
+		var index = -1;		
+		var comArr = eval( $scope.sections );
+		for( var i = 0; i < comArr.length; i++ ) {
+			
+			$scope.sections.splice( index, 1 );
+		}			
+	}
+	
+
 $scope.sendclass = function() {
     
     //$scope.generate_teacher_id();
@@ -299,7 +309,8 @@ $scope.sendclass = function() {
         headers: {'Content-Type': 'application/json'}
       }).success(function (data, status, headers, config) {
           window.alert("Successfully Inserted");
-          $scope.Class = [];  
+          $scope.Class = [];
+          $scope.removeAllRow();  
              
         }).error(function (data, status, headers, config) {
             $scope.status = status + ' ' + headers;
@@ -310,9 +321,7 @@ $scope.getclass = function() {
 
     $http.get("https://api.mongolab.com/api/1/databases/schools/collections/class?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu")
     .success(function(response) {$scope.class_coll = response;
-   
-    window.alert($scope.class_coll[0].std);
-    //$scope.sendteacher(); 
+    window.alert("Records Fetch Successfully")
       
     });
     
