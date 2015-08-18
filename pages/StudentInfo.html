@@ -2,27 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Smart School | Style Demo</title>
-    <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
+    <link href="../style/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div>
-        <br />
-        <h1 class="para" align="left">
+    <div class="container-fluid">
+      
+        <h1 align="left">
             Student Information</h1>
-        <table>
+        <table class="table table-striped">
             <tbody>
                 <tr>
                     <td>
                         First Name
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_fname" ng-model="studentdata.first_name"/>
+                        <input type="text" id="txt_stu_fname" ng-model="studentdata.first_name" />
                     </td>
                     <td>
                         Last Name
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_lname" ng-model="studentdata.last_name"/>
+                        <input type="text" id="txt_stu_lname" ng-model="studentdata.last_name" />
                     </td>
                 </tr>
                 <tr>
@@ -30,15 +30,14 @@
                         Gender
                     </td>
                     <td>
-                        <input type="radio" name="male" value="male" ng-model="studentdata.gender" >Male
-                        <input type="radio" name="female" value="female"  ng-model="studentdata.gender" >Female
-                  
+                        <input type="radio" name="male" value="male" ng-model="studentdata.gender">Male
+                        <input type="radio" name="female" value="female" ng-model="studentdata.gender">Female
                     </td>
                     <td>
                         Email
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_email" ng-model="studentdata.email"/>
+                        <input type="text" id="txt_stu_email" ng-model="studentdata.email" />
                     </td>
                 </tr>
                 <tr>
@@ -46,13 +45,13 @@
                         Date Of Birth
                     </td>
                     <td>
-                        <input type="date" id="txt_stu_dob" ng-model="studentdata.dob"/>
+                        <input type="date" id="txt_stu_dob" ng-model="studentdata.dob" />
                     </td>
                     <td>
                         Contact
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_contact" ng-model="studentdata.contact"/>
+                        <input type="text" id="txt_stu_contact" ng-model="studentdata.contact" />
                     </td>
                 </tr>
                 <tr>
@@ -60,13 +59,13 @@
                         Nationality
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_nationality" ng-model="studentdata.nationality"/>
+                        <input type="text" id="txt_stu_nationality" ng-model="studentdata.nationality" />
                     </td>
                     <td>
                         Religion
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_religion" ng-model="studentdata.religion"/>
+                        <input type="text" id="txt_stu_religion" ng-model="studentdata.religion" />
                     </td>
                 </tr>
                 <tr>
@@ -74,13 +73,13 @@
                         Mothertounge
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_mothertounge" ng-model="studentdata.mothertounge"/>
+                        <input type="text" id="txt_stu_mothertounge" ng-model="studentdata.mothertounge" />
                     </td>
                     <td>
                         Father Name
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_father" ng-model="studentdata.fathername"/>
+                        <input type="text" id="txt_stu_father" ng-model="studentdata.fathername" />
                     </td>
                 </tr>
                 <tr>
@@ -108,7 +107,7 @@
                         Landline
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_landline" ng-model="studentdata.landline"/>
+                        <input type="text" id="txt_stu_landline" ng-model="studentdata.landline" />
                     </td>
                 </tr>
                 <tr>
@@ -122,7 +121,6 @@
                         State
                     </td>
                     <td>
-                       
                         <select ng-model="statename" ng-change="myfun()" ng-init="getstate()">
                             <option value="">Select State</option>
                             <option ng-repeat="sts in states_coll | orderBy:'statename'" value="{{sts.statename}}"
@@ -135,36 +133,22 @@
                         City
                     </td>
                     <td>
-                        
                         <select ng-model="city" ng-change="">
                             <option value="">Select City</option>
-                            <option ng-repeat="ct in cities | orderBy:'cityname'" value="{{ct.cityname}}" 
-                                ng-selected="{{ct.cityname == city}}">{{ct.cityname}} </option>
+                            <option ng-repeat="ct in cities | orderBy:'cityname'" value="{{ct.cityname}}" ng-selected="{{ct.cityname == city}}">
+                                {{ct.cityname}} </option>
                         </select>
                     </td>
                     <td>
                         Country
                     </td>
                     <td>
-                        <input type="text" id="txt_stu_country" ng-model="studentdata.country"/>
-                    </td>
-                </tr>
-                 <tr>
-                    <td>
-                        City
-                    </td>
-                    <td>
-                        <input type="submit" ng-click="sendstudentdata()"/>
-                    </td>
-                    <td>
-                        Country
-                    </td>
-                    <td>
-                        <input type="text" id="Text2" ng-model="studentdata.country"/>
+                        <input type="text" id="txt_stu_country" ng-model="studentdata.country" />
                     </td>
                 </tr>
             </tbody>
         </table>
+        <input type="submit" class="btn btn-primary" value="Submit" ng-click="sendstudentdata()" />
     </div>
 </body>
 </html>

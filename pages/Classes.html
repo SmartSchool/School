@@ -2,36 +2,34 @@
 <html>
 <head>
     <title>Smart School | Style Demo</title>
-    <link href="../style/AskQuestions.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-        #txt_class_std
-        {
-            top: 58px;
-            left: 122px;
-            position: absolute;
-            height: 22px;
-            width: 128px;
-        }
-    </style>
+    <link href="../style/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body ng-app="ngapp">
-    <p>
-        &nbsp;&nbsp;&nbsp;
-    </p>
-    <div style="width: 1024px; top: 53px; left: 13px; position: absolute; height: 92px">
-        <h1 class="para" align="left">
+<body>
+    <div class="container-fluid">
+        <h1 align="left">
             Class Information</h1>
-        &nbsp;&nbsp;&nbsp; Class Standard&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="txt_class_std" ng-model="Class.std" />&nbsp;
-        <br />
-        <br />
-        &nbsp;&nbsp;&nbsp;&nbsp; Add Sections
-        <br />
-        <table>
+        <table class="table table-striped">
             <tbody>
                 <tr>
                     <td>
-                        Group Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Class Standard
+                    </td>
+                    <td>
+                        <input type="text" ng-model="Class.std" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 align="left">
+                            Add Sections
+                        </h1>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Group Name
                     </td>
                     <td>
                         <input type="text" id="txt_tea_gender" ng-model="groupname" />
@@ -63,7 +61,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" ng-click="addRow()" value="Add" />
+                        <input type="submit" class="btn btn-primary" ng-click="addRow()" value="Add" />
                     </td>
                     <td>
                         <select ng-model="std" ng-change="">
@@ -76,8 +74,8 @@
             </tbody>
         </table>
     </div>
-    <div>
-        <table class="tbl">
+    <div class="container-fluid">
+        <table class="table table-striped">
             <tbody>
                 <tr>
                     <th>
@@ -110,15 +108,12 @@
                         {{section.noofstudents}}
                     </td>
                     <td>
-                        <input type="button" value="Remove" ng-click="removeRow(section.groupname)" />
+                        <input type="button" class="btn btn-primary" value="Remove" ng-click="removeRow(section.groupname)" />
                     </td>
                 </tr>
-            </tbody>
+            </tbody> 
         </table>
-        <input type="submit" ng-click="sendclass()" value="Submit" style="top: 421px; left: 16px;
-            position: absolute; height: 26px; width: 61px" />
-        <input type="submit" ng-click="getclass()" value="Get" style="top: 422px; left: 133px;
-            position: absolute; height: 26px; width: 35px; right: 900px" />
+        <input type="submit" class="btn btn-primary" value="Submit" ng-click="sendclass()" />
     </div>
 </body>
 </html>
