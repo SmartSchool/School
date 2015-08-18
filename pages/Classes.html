@@ -15,7 +15,7 @@
                         Class Standard
                     </td>
                     <td>
-                        <input type="text" ng-model="Class.std" />
+                        <input class="form-control" type="text" ng-model="Class.std" />
                     </td>
                 </tr>
                 <tr>
@@ -32,7 +32,7 @@
                         Group Name
                     </td>
                     <td>
-                        <input type="text" id="txt_tea_gender" ng-model="groupname" />
+                        <input class="form-control" type="text" id="txt_tea_gender" ng-model="groupname" />
                     </td>
                 </tr>
                 <tr>
@@ -40,7 +40,7 @@
                         ClassRoom No
                     </td>
                     <td>
-                        <input type="text" id="txt_tea_email" ng-model="roomno" />
+                        <input class="form-control" type="text" id="txt_tea_email" ng-model="roomno" />
                     </td>
                 </tr>
                 <tr>
@@ -48,7 +48,7 @@
                         No Of Seats
                     </td>
                     <td>
-                        <input type="text" id="txt_tea_dob" ng-model="noofseats" />
+                        <input class="form-control" type="text" id="txt_tea_dob" ng-model="noofseats" />
                     </td>
                 </tr>
                 <tr>
@@ -56,7 +56,7 @@
                         No Of Students
                     </td>
                     <td>
-                        <input type="text" id="txt_tea_contact" ng-model="noofstudents" />
+                        <input class="form-control" type="text" id="txt_tea_contact" ng-model="noofstudents" />
                     </td>
                 </tr>
                 <tr>
@@ -64,7 +64,7 @@
                         <input type="submit" class="btn btn-primary" ng-click="addRow()" value="Add" />
                     </td>
                     <td>
-                        <select ng-model="std" ng-change="">
+                        <select class="form-control" ng-model="std" ng-change="">
                             <option value="">Select Class</option>
                             <option ng-repeat="cls in class_coll | orderBy:'std'" value="{{cls.std}}" ng-selected="{{cls.std == std}}">
                                 {{cls.std}} </option>
