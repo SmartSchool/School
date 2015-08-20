@@ -262,6 +262,7 @@ $scope.generate_teacher_id = function() {
 
 
 $scope.sections = [ ];
+$scope.show = "false";
 
 $scope.addRow = function() {		
 	$scope.sections.push({ 'groupname':$scope.groupname, 'roomno': $scope.roomno, 'noofseats':$scope.noofseats, 'noofstudents':$scope.noofstudents  });
@@ -269,6 +270,7 @@ $scope.addRow = function() {
 	$scope.roomno='';
 	$scope.noofseats='';
 	$scope.noofstudents='';
+	$scope.show = "true";
 }
 
 $scope.removeRow = function(groupname){				
@@ -299,22 +301,28 @@ $scope.removeAllRow = function(){
 $scope.sendclass = function() {
     
     //$scope.generate_teacher_id();
-    $scope.Class.sections = $scope.sections; 
-    $scope.json = angular.toJson($scope.Class);
+    if ($scope.Class.sections.length)
+    {
+        $scope.Class.sections = $scope.sections; 
+        $scope.json = angular.toJson($scope.Class);
  
-    $http({
-        url: "https://api.mongolab.com/api/1/databases/schools/collections/class?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
-        method: "POST",
-        data: $scope.json,
-        headers: {'Content-Type': 'application/json'}
-      }).success(function (data, status, headers, config) {
-          window.alert("Successfully Inserted");
-          $scope.Class = [];
-          $scope.removeAllRow();  
+        $http({
+            url: "https://api.mongolab.com/api/1/databases/schools/collections/class?apiKey=4GXdhQc-8-ldzKMWSJxCu2lYMLhMMIZu",
+            method: "POST",
+            data: $scope.json,
+            headers: {'Content-Type': 'application/json'}
+        }).success(function (data, status, headers, config) {
+            window.alert("Successfully Inserted");
+            $scope.Class = [];
+            $scope.removeAllRow();  
              
         }).error(function (data, status, headers, config) {
             $scope.status = status + ' ' + headers;
-        });  
+        });
+    }
+    else {
+        window.alert("Add Section first");
+    }  
 }
 	
 $scope.getclass = function() {
